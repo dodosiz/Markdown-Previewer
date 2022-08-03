@@ -10,12 +10,16 @@ function App() {
   const [html, setHtml] = React.useState();
 
   React.useEffect(() => {
-    setHtml(DOMPurify.sanitize(marked.parse(input)));
+    setHtml(textToHtml(input));
   }, [input]);
 
   const handleInputChange = (textInput = "") => {
     setInput(textInput);
-    setHtml(DOMPurify.sanitize(marked.parse(textInput)));
+    setHtml(textToHtml(textInput));
+  };
+
+  const textToHtml = (text) => {
+    return DOMPurify.sanitize(marked.parse(text, { breaks: true }));
   };
 
   return (
