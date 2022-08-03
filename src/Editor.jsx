@@ -11,6 +11,9 @@ const TextArea = styled.textarea`
   resize: none;
 `;
 
-export function Editor() {
-  return <TextArea id="editor"></TextArea>;
+export function Editor(props = { handleInputChange: () => {} }) {
+  const onInputChange = (e) => {
+    props.handleInputChange(e.target.value);
+  };
+  return <TextArea id="editor" onChange={onInputChange}></TextArea>;
 }

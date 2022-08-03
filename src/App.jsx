@@ -3,10 +3,11 @@ import { Previewer } from "./Previewer";
 import { Editor } from "./Editor";
 
 function App() {
+  const [input, setInput] = React.useState("");
   return (
     <div className="app">
-      <Previewer />
-      <Editor />
+      <Previewer input={input} />
+      <Editor handleInputChange={(i) => setInput(i)} />
     </div>
   );
 }
