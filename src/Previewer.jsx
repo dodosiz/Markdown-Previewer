@@ -11,6 +11,11 @@ const PreviewDiv = styled.div`
   overflow-y: scroll;
 `;
 
-export function Previewer() {
-  return <PreviewDiv id="preview"></PreviewDiv>;
+export function Previewer(props = { html: "" }) {
+  return (
+    <PreviewDiv
+      dangerouslySetInnerHTML={{ __html: props.html }}
+      id="preview"
+    ></PreviewDiv>
+  );
 }
