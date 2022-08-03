@@ -13,6 +13,11 @@ body {
   padding-top: 5%;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 div::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
   width: 1em;

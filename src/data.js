@@ -1,38 +1,23 @@
-import { marked } from "marked";
-import DOMPurify from "dompurify";
-
-const INITIAL_TEXT = `
+export const INITIAL_TEXT = `
 # Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
 
-Heres some code, \`<div></div>\`, between 2 backticks.
+Here is some inline code, \`<div></div>\`.
 
 \`\`\`
 // this is multi-line code:
 
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
-}
+function anotherExample(firstLine, lastLine) {}
 \`\`\`
 
 You can also make text **bold**... whoa!
 Or _italic_.
 Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
 
 There's also [links](https://www.freecodecamp.org), and
 > Block Quotes!
-
-And if you want to get really crazy, even tables:
-
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
 
 - And of course there are lists.
   - Some are bulleted.
@@ -47,5 +32,3 @@ And here. | Okay. | I think we get it.
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 
 `;
-
-export const INITIAL_HTML = DOMPurify.sanitize(marked.parse(INITIAL_TEXT));
