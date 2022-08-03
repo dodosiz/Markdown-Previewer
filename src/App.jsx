@@ -1,13 +1,19 @@
 import * as React from "react";
 import { Previewer } from "./Previewer";
 import { Editor } from "./Editor";
+import { marked } from "marked";
+import DOMPurify from "dompurify";
 
 function App() {
-  const [input, setInput] = React.useState("");
+  const handleInputChange = (textInput = "") => {
+    document.getElementById("preview").innerHTML = DOMPurify.sanitize(
+      marked.parse(textInput)
+    );
+  };
   return (
     <div className="app">
-      <Previewer input={input} />
-      <Editor handleInputChange={(i) => setInput(i)} />
+      <Previewer />
+      <Editor handleInputChange={handleInputChange} />
     </div>
   );
 }

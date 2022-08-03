@@ -8,8 +8,9 @@ const PreviewDiv = styled.div`
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   display: inline-block;
   text-align: initial;
+  overflow-y: scroll;
 `;
 
-export function Previewer(props = { input: "" }) {
-  return <PreviewDiv id="preview">{props.input}</PreviewDiv>;
+export function Previewer() {
+  return <PreviewDiv id="preview"></PreviewDiv>;
 }
